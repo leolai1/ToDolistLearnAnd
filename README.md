@@ -1,2 +1,0 @@
-# ToDolistLearnAnd
-learning android
