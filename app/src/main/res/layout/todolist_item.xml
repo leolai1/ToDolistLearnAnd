@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.leolai.todolist.TodoListItemView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textColor="@color/notepad_text"
-    android:fadingEdge="vertical"
-    android:padding="10dp">
-
-</com.leolai.todolist.TodoListItemView>
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/create_date_id"
+        android:background="@color/notepad_paper"
+        android:padding="10dp"
+        android:textColor="@color/notepad_text"
+        android:layout_alignParentRight="true"/>
+    <com.leolai.todolist.TodoListItemView
+        android:layout_toLeftOf="@id/create_date_id"
+        android:id="@+id/task_name_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/notepad_text"
+        android:fadingEdge="vertical"
+        android:padding="10dp">
+    </com.leolai.todolist.TodoListItemView>
+</RelativeLayout>

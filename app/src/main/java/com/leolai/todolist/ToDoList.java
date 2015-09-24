@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class ToDoList extends Activity implements NewItemFragment.OnFragmentInteractionListener {
 
-    ArrayList<String> todoItems;
-    ArrayAdapter<String> ad;
+    ArrayList<ToDoItem> todoItems;
+    ToDoItemAdapter ad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +56,8 @@ public class ToDoList extends Activity implements NewItemFragment.OnFragmentInte
         mTransaction.add(R.id.list_frag, mTodoFrag);
         mTransaction.commit();
 
-        todoItems = new ArrayList<String>();
-        ad = new ArrayAdapter<String>(this, R.layout.todolist_item,
+        todoItems = new ArrayList<ToDoItem>();
+        ad = new ToDoItemAdapter(this, R.layout.todolist_item,
                 todoItems);
         mTodoFrag.setListAdapter(ad);
     }
@@ -85,8 +85,9 @@ public class ToDoList extends Activity implements NewItemFragment.OnFragmentInte
     }
 
     @Override
-    public void  onNewItemAdded(String nItem) {
+    public void  onNewItemAdded(ToDoItem nItem) {
         todoItems.add(nItem);
         ad.notifyDataSetChanged();
     }
+
 }

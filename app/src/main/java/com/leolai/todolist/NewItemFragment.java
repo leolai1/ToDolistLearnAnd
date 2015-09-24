@@ -97,7 +97,8 @@ public class NewItemFragment extends Fragment {
     // TODO: Rename method, update argument and hook method into UI event
     public void onSaveItem(String nItem) {
         if (mListener != null) {
-            mListener.onNewItemAdded(nItem);
+            ToDoItem mItem = new ToDoItem(nItem);
+            mListener.onNewItemAdded(mItem);
         }
     }
 
@@ -130,7 +131,7 @@ public class NewItemFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onNewItemAdded(String nItem);
+        public void onNewItemAdded(ToDoItem nItem);
     }
 
 }
